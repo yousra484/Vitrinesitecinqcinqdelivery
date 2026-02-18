@@ -1,0 +1,22 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Slick Carousel Custom Styles */
+.slick-dots li button:before {
+  color: #10b981 !important;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #10b981 !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #10b981 !important;
+}
