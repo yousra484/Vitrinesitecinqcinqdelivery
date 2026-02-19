@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Menu, X, Phone, Instagram } from 'lucide-react';
 import { Button } from './ui/button';
-import logo from 'figma:asset/5b1a80c87236233cbad534426cd31542a2dfe703.png';
+import logo from '@/assets/5b1a80c87236233cbad534426cd31542a2dfe703.png';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -20,7 +20,7 @@ export function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <img src={logo} alt="CinQ CinQ" className="h-12 w-12" />
+            <img src={logo} alt="CinQ CinQ" className="h-18 w-18" />
             <span className="text-white font-bold text-xl">CinQ CinQ Delivery</span>
           </div>
 
@@ -48,14 +48,7 @@ export function Header() {
             <a href="tel:0549000866" className="text-gray-300 hover:text-green-400 transition">
               <Phone size={20} />
             </a>
-            <a 
-              href="https://www.instagram.com/cinqcinq_livraison" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-300 hover:text-green-400 transition"
-            >
-              <Instagram size={20} />
-            </a>
+            
             <Button 
               onClick={() => scrollToSection('contact')}
               className="bg-green-500 hover:bg-green-400 text-black font-semibold"

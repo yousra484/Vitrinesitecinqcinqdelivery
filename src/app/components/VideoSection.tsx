@@ -27,13 +27,13 @@ export function VideoSection() {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="absolute inset-0 bg-gradient-to-br from-black/50 to-black/30"></div>
                 <img
-                  src="https://images.unsplash.com/photo-1766592817657-fc61d166f06f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmb29kJTIwZGVsaXZlcnklMjByZXN0YXVyYW50JTIwbWVhbHxlbnwxfHx8fDE3NzEzNTIxOTh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                  src="https://img.youtube.com/vi/kIYki6iNwYM/maxresdefault.jpg"
                   alt="Video Thumbnail"
-                  className="w-full h-full object-cover opacity-50"
+                  className="w-full h-full object-cover opacity-70"
                 />
                 <motion.button
                   onClick={() => setIsPlaying(true)}
-                  className="relative z-10 bg-green-500 hover:bg-green-400 text-black rounded-full p-8 transition-all shadow-lg shadow-green-500/50"
+                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-green-500 hover:bg-green-400 text-black rounded-full p-8 transition-all shadow-lg shadow-green-500/50"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -41,9 +41,13 @@ export function VideoSection() {
                 </motion.button>
               </div>
             ) : (
-              <div className="w-full h-full flex items-center justify-center text-white">
-                <p className="text-xl">Vidéo à venir - En production</p>
-              </div>
+              <iframe
+                src="https://www.youtube.com/embed/kIYki6iNwYM?autoplay=1&rel=0"
+                title="CinQ CinQ Delivery Video"
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             )}
           </div>
         </motion.div>

@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Play } from 'lucide-react';
 import { Button } from './ui/button';
-import logo from 'figma:asset/5b1a80c87236233cbad534426cd31542a2dfe703.png';
+import logo from '@/assets/dark.png';
 
 interface HeroSectionProps {
   onScrollToSection: (id: string) => void;
@@ -117,30 +117,10 @@ export function HeroSection({ onScrollToSection }: HeroSectionProps) {
               <Play className="mr-2 group-hover:scale-110 transition-transform" size={20} />
               Applications Coming Soon
             </Button>
-            <Button
-              onClick={() => onScrollToSection('contact')}
-              variant="outline"
-              className="border-2 border-gray-700 text-gray-300 hover:bg-gray-800 hover:text-white px-8 py-6 text-lg"
-            >
-              Contact
-            </Button>
+          
           </motion.div>
 
-          {/* Scroll Indicator */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          >
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-6 h-10 border-2 border-green-500 rounded-full flex items-start justify-center p-2"
-            >
-              <div className="w-1 h-2 bg-green-500 rounded-full"></div>
-            </motion.div>
-          </motion.div>
+          
         </div>
       </div>
     </section>

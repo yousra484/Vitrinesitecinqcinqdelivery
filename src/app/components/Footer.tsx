@@ -1,5 +1,5 @@
 import { Phone, Mail, Instagram } from 'lucide-react';
-import logo from 'figma:asset/5b1a80c87236233cbad534426cd31542a2dfe703.png';
+import logo from '@/assets/dark.png';
 
 export function Footer() {
   return (
@@ -9,7 +9,7 @@ export function Footer() {
           {/* Logo & Description */}
           <div className="md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <img src={logo} alt="CinQ CinQ" className="h-10 w-10" />
+              <img src={logo} alt="CinQ CinQ" className="h-18 w-18" />
               <span className="font-bold text-xl">CinQ CinQ Delivery</span>
             </div>
             <p className="text-gray-400 max-w-md">

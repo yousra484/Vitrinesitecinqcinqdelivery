@@ -1,6 +1,9 @@
 import { motion, useScroll, useTransform } from 'motion/react';
 import { Smartphone, Store, Bike, CheckCircle, Play } from 'lucide-react';
 import { useRef, useState } from 'react';
+import customerGif from '@/assets/custumer.gif';
+import restaurantGif from '@/assets/restaurant.gif';
+import riderGif from '@/assets/rider.gif';
 
 export function ApplicationsSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -26,9 +29,9 @@ export function ApplicationsSection() {
         'Historique des commandes',
         'Notifications instantanées',
       ],
-      color: 'from-blue-500 to-cyan-500',
-      bgColor: 'bg-blue-500',
-      image: 'https://images.unsplash.com/photo-1729860649884-40ec104f9dfd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmb29kJTIwZGVsaXZlcnklMjBhcHAlMjBzY3JlZW58ZW58MXx8fHwxNzcxNDA1MDQ0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      color: 'from-green-500 to-emerald-500',
+      bgColor: 'bg-green-500',
+      image: customerGif,
     },
     {
       id: 1,
@@ -44,9 +47,9 @@ export function ApplicationsSection() {
         'Gestion du catalogue',
         'Statistiques en temps réel',
       ],
-      color: 'from-purple-500 to-pink-500',
-      bgColor: 'bg-purple-500',
-      image: 'https://images.unsplash.com/photo-1761515397001-c8e82879c4c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwZGFzaGJvYXJkJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc3MTM5NDc2OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      color: 'from-emerald-600 to-teal-500',
+      bgColor: 'bg-emerald-600',
+      image: restaurantGif,
     },
     {
       id: 2,
@@ -64,7 +67,7 @@ export function ApplicationsSection() {
       ],
       color: 'from-green-500 to-emerald-500',
       bgColor: 'bg-green-500',
-      image: 'https://images.unsplash.com/photo-1659353740216-8f1922e08f1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZWxpdmVyeSUyMGRyaXZlciUyMGFwcCUyMGdwc3xlbnwxfHx8fDE3NzE0NDA0MTN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      image: riderGif,
     },
   ];
 
@@ -154,41 +157,37 @@ export function ApplicationsSection() {
                     <img
                       src={currentApp.image}
                       alt={currentApp.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain bg-black"
                     />
-                    
-                    {/* App Overlay UI Elements */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
-                      <div className="absolute bottom-0 left-0 right-0 p-6">
-                        <motion.div
-                          initial={{ y: 20, opacity: 0 }}
-                          animate={{ y: 0, opacity: 1 }}
-                          transition={{ delay: 0.3 }}
-                          className="bg-gray-900/95 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-green-500/20"
-                        >
-                          <div className="flex items-center gap-3 mb-3">
-                            <div className={`${currentApp.bgColor} p-2 rounded-xl shadow-lg`}>
-                              <currentApp.icon size={24} className="text-white" />
-                            </div>
-                            <div>
-                              <h4 className="font-bold text-white">{currentApp.name}</h4>
-                              <p className="text-xs text-gray-400">{currentApp.tagline}</p>
-                            </div>
-                          </div>
-                          <div className="flex gap-2">
-                            <div className="flex-1 bg-green-500 text-black text-center py-2 rounded-lg font-semibold text-sm shadow-lg">
-                              Bientôt disponible
-                            </div>
-                          </div>
-                        </motion.div>
-                      </div>
-                    </div>
                   </motion.div>
                 </div>
 
                 {/* Phone Button */}
                 <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gray-700 rounded-full"></div>
               </div>
+
+              {/* App Info Card - Below Phone */}
+              <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.3 }}
+                className=" bg-gray-900/95 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-green-500/20"
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <div className={`${currentApp.bgColor} p-2 rounded-xl shadow-lg`}>
+                    <currentApp.icon size={24} className="text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white">{currentApp.name}</h4>
+                    <p className="text-xs text-gray-400">{currentApp.tagline}</p>
+                  </div>
+                </div>
+                <div className="flex gap-2">
+                  <div className="flex-1 bg-green-500 text-black text-center py-2 rounded-lg font-semibold text-sm shadow-lg">
+                    Bientôt disponible
+                  </div>
+                </div>
+              </motion.div>
 
               {/* Floating Elements */}
               <motion.div
