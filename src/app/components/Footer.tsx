@@ -1,9 +1,9 @@
 import { Phone, Mail, Instagram } from 'lucide-react';
-import logo from '@/assets/dark.png';
+import logo from '@/assets/5b1a80c87236233cbad534426cd31542a2dfe703.png';
 
 export function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-12 border-t border-green-500/20">
+    <footer className="bg-black text-white py-12 border-t border-green-500/20">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Logo & Description */}
@@ -13,7 +13,8 @@ export function Footer() {
               <span className="font-bold text-xl">CinQ CinQ Delivery</span>
             </div>
             <p className="text-gray-400 max-w-md">
-              La plateforme algérienne de livraison multi-services. Tout ce dont vous avez besoin, livré à tout moment.
+              La plateforme algérienne de livraison multi-services.
+              <br />Tout ce dont vous avez besoin, livré à tout moment.
             </p>
           </div>
 
@@ -94,7 +95,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 pt-8 mt-8">
+        <div className="border-t border-green-500/20 pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
               © {new Date().getFullYear()} CinQ CinQ Delivery. Tous droits réservés.
